@@ -20,13 +20,17 @@ function MyForm(){
   
   const handleSubmit = (e)=>{
     e.preventDefault();
+    let trimedTodo = todo.trim()
+    if (trimedTodo !="") {
     const nextTodo = [
           ...todoList,
           {id: nextId++, task: todo,}
         ];
 
         setTodoList(nextTodo)
-        setTodo("")
+      }
+      setTodo("")
+      return
   }
 
   return (
