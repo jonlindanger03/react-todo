@@ -17,25 +17,29 @@ function MyForm(){
   const [todo, setTodo] = useState("")
   const [todoList, setTodoList] = useState([])
   
-  function handleclick(){
+  
+  const handleSubmit = (e)=>{
+    e.preventDefault();
     const nextTodo = [
           ...todoList,
           {id: nextId++, task: todo,}
         ];
 
         setTodoList(nextTodo)
+        setTodo("")
   }
 
   return (
     <>
-      
-        <input type="text" value={todo} onChange={e=> setTodo(e.target.value)} />
-        <button onClick={(handleclick)}>add</button>
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={todo} onChange={(e)=> setTodo(e.target.value)} />
+        <button type='submit'>add</button>
+      </form>
      
         <ul>
           {todoList.map(todos => (
             <li key={todos.id}>{todos.id} {todos.task}</li>
-          ))}
+            ))}
         </ul>
 
     </>
