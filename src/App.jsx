@@ -42,7 +42,14 @@ function MyForm(){
      
         <ul>
           {todoList.map(todos => (
-            <li key={todos.id}>{todos.id} {todos.task}</li>
+            <li key={todos.id}>{todos.id} {todos.task}
+            <button 
+            onClick={() => {setTodoList(
+              todoList.filter(t => t.id !== todos.id) 
+            )}}>
+              delete
+            </button>
+            </li>
             ))}
         </ul>
 
