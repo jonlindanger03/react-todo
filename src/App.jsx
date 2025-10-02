@@ -11,8 +11,8 @@ export default function App() {
   )
 }
 
-let nextId = 0;
 
+let nextId = 0;
 function MyForm(){
   const [todo, setTodo] = useState("")
   const [todoList, setTodoList] = useState([])
@@ -38,8 +38,8 @@ function MyForm(){
     <div className='card'>
 
       <form className='form' onSubmit={handleSubmit}>
-        <input type="text" value={todo} onChange={(e)=> setTodo(e.target.value)} />
-        <button type='submit'>add</button>
+        <input type="text" placeholder='Enter Task...' value={todo} onChange={(e)=> setTodo(e.target.value)} />
+        <button type='submit'>ADD</button>
       </form>
      
         <ul className='list'>
@@ -51,7 +51,7 @@ function MyForm(){
             onClick={() => {setTodoList(
               todoList.filter(t => t.id !== todos.id) 
               )}}>
-              delete
+              X
             </button>
             </li>
             ))}

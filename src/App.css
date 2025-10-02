@@ -12,22 +12,35 @@
 .form input {
     flex: 1;
     padding: 8px;
+    border-radius: 10px;
   }
 .form button {
     padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: lightgreen;
   }
-    .list {
+.list {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 .list-item{
     display: flex;
-  justify-content: space-between; 
-  align-items: center;  
+    justify-content: space-between; 
+    align-items: center;  
     padding: 5px;
     border: 2px solid black;
     margin: 5px;
     background-color: darkgray;
-    border-radius: 20px;
+    border-radius: 10px;
+    font-size: x-large;
+}
+
+.list-item button{
+    color: red;
+    border: none;
+    background: transparent;
+    font-weight: bold;
+    font-size: large;
 }
