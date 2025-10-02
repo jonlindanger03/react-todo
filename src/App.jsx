@@ -35,24 +35,29 @@ function MyForm(){
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+    <div className='card'>
+
+      <form className='form' onSubmit={handleSubmit}>
         <input type="text" value={todo} onChange={(e)=> setTodo(e.target.value)} />
         <button type='submit'>add</button>
       </form>
      
-        <ul>
+        <ul className='list'>
           {todoList.map(todos => (
-            <li key={todos.id}>{todos.id} {todos.task}
-            <button 
+            <li className='list-item' key={todos.id}> 
+            <input type="checkbox" />
+            {todos.task}
+            <button
             onClick={() => {setTodoList(
               todoList.filter(t => t.id !== todos.id) 
-            )}}>
+              )}}>
               delete
             </button>
             </li>
             ))}
         </ul>
 
+    </div>
     </>
 )}
 
